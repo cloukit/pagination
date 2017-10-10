@@ -26,7 +26,8 @@ import { calculatePaginationItems, PaginationItem } from '../logic/pagination-he
   <div [ngStyle]="getStyle('wrapper').style">
     <button
       type="button"
-      (click)="selectPage(1)"      
+      [disabled]="!isPreviousPossible()"
+      (click)="selectPrevious()"
     >
       {{textPrevLabel()}}
     </button>
@@ -40,7 +41,8 @@ import { calculatePaginationItems, PaginationItem } from '../logic/pagination-he
     </button>
     <button
       type="button"
-      (click)="selectPage(99)"      
+      [disabled]="!isNextPossible()"
+      (click)="selectNext()"
     >
       {{textNextLabel()}}
     </button>
@@ -130,8 +132,9 @@ export class CloukitPaginationComponent implements OnChanges {
   }
 
   selectPage(page: number) {
-    console.log('inside', page);
-    this.onPageSelect.emit(page);
+    if (page !== -1) {
+      this.onPageSelect.emit(page);
+    }
   }
 
   textPrevLabel() {
@@ -148,4 +151,23 @@ export class CloukitPaginationComponent implements OnChanges {
     return 'Next';
   }
 
+  isPreviousPossible() {
+    return this.current > 1;
+  }
+
+  selectPrevious() {
+    if (this.isPreviousPossible()) {
+      this.selectPage(this.current - 1)
+    }
+  }
+
+  isNextPossible() {
+    return this.current < this.total;
+  }
+
+  selectNext() {
+    if (this.isNextPossible()) {
+      this.selectPage(this.current + 1)
+    }
+  }
 }
