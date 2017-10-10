@@ -48,15 +48,15 @@ export class CloukitPaginationComponentThemeDefault extends CloukitComponentThem
       }
     } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition);
 
-    this.createStyle('button', 'active', 'disabled', this.merge(this.getStyle('button', 'inactive', 'base'), {
+    this.createStyle('button', 'active', 'base', this.merge(this.getStyle('button', 'inactive', 'base'), {
       style: {
         backgroundColor: 'red',
       }
     } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
 
-    this.createStyle('button', 'filler', 'disabled', this.merge(this.getStyle('button', 'inactive', 'base'), {
+    this.createStyle('button', 'filler', 'base', this.merge(this.getStyle('button', 'inactive', 'base'), {
       style: {
-        backgroundColor: 'blue',
+        backgroundColor: '#ccc',
       }
     } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
   }

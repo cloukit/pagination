@@ -26,8 +26,7 @@ import { calculatePaginationItems, PaginationItem } from '../logic/pagination-he
   <div [ngStyle]="getStyle('wrapper').style">
     <button
       type="button"
-      [ngStyle]="getStyle('button').style"
-      (selectPage)="1"      
+      (click)="selectPage(1)"      
     >
       {{textPrevLabel()}}
     </button>
@@ -35,14 +34,13 @@ import { calculatePaginationItems, PaginationItem } from '../logic/pagination-he
       *ngFor="let page of state.pages"
       type="button"
       [ngStyle]="getButtonStyle(page).style"
-      (selectPage)="page.page"
+      (click)="selectPage(page.page)"
     >
       {{page.label}}
     </button>
     <button
       type="button"
-      [ngStyle]="getStyle('button').style"
-      (selectPage)="3"
+      (click)="selectPage(99)"      
     >
       {{textNextLabel()}}
     </button>
@@ -116,7 +114,7 @@ export class CloukitPaginationComponent implements OnChanges {
   }
 
   public getStyle(element: string): CloukitStatefulAndModifierAwareElementThemeStyleDefinition {
-    const style = this.themeSelected.getStyle(element, 'inactive', 'base');
+    const style = this.themeSelected.getStyle(element, 'normal', 'base');
     return this.themeService.prefixStyle(style);
   }
 
@@ -132,6 +130,7 @@ export class CloukitPaginationComponent implements OnChanges {
   }
 
   selectPage(page: number) {
+    console.log('inside', page);
     this.onPageSelect.emit(page);
   }
 
