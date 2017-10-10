@@ -35,7 +35,7 @@ import { calculatePaginationItems, PaginationItem } from '../logic/pagination-he
       *ngFor="let page of state.pages"
       type="button"
       [ngStyle]="getButtonStyle(page).style"
-      [(selectPage)]="page.page"
+      (selectPage)="page.page"
     >
       {{page.label}}
     </button>
