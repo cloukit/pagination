@@ -24,7 +24,7 @@ export class CloukitPaginationComponentThemeDefault extends CloukitComponentThem
       }
     } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition);
 
-    this.createStyle('button', 'normal', 'base', {
+    this.createStyle('button', 'inactive', 'base', {
       style: {
         alignSelf: 'center',
         display: 'inline-flex',
@@ -47,6 +47,18 @@ export class CloukitPaginationComponentThemeDefault extends CloukitComponentThem
         cursor: 'pointer',
       }
     } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition);
+
+    this.createStyle('button', 'active', 'disabled', this.merge(this.getStyle('button', 'inactive', 'base'), {
+      style: {
+        backgroundColor: 'red',
+      }
+    } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+
+    this.createStyle('button', 'filler', 'disabled', this.merge(this.getStyle('button', 'inactive', 'base'), {
+      style: {
+        backgroundColor: 'blue',
+      }
+    } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
   }
 
 }

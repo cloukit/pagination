@@ -9,6 +9,7 @@ import {
   CloukitComponentTheme, CloukitStatefulAndModifierAwareElementThemeStyleDefinition,
   CloukitThemeService,
 } from '@cloukit/theme';
+import { calculatePaginationItems, PaginationItem } from '../logic/pagination-helper';
 
 /**
  * Pagination Component.
@@ -31,11 +32,12 @@ import {
       {{textPrevLabel()}}
     </button>
     <button
+      *ngFor="let page of state.pages"
       type="button"
-      [ngStyle]="getStyle('button').style"
-      (selectPage)="2"
+      [ngStyle]="getButtonStyle(page).style"
+      [(selectPage)]="page.page"
     >
-      1
+      {{page.label}}
     </button>
     <button
       type="button"
@@ -91,6 +93,7 @@ export class CloukitPaginationComponent implements OnChanges {
   private themeServiceFromExternal: boolean = false;
   private themeSelected: CloukitComponentTheme;
   private state = {
+    pages: [],
     uiModifier: 'base',
     uiState: 'normal',
   };
@@ -107,6 +110,13 @@ export class CloukitPaginationComponent implements OnChanges {
     this.themeSelected = this.themeService.getComponentTheme('pagination');
   }
 
+  public getButtonStyle(pageItem: PaginationItem) {
+    const uiStateActiveInactive = pageItem.isActive ? 'active' : 'inactive';
+    const uiState = pageItem.isFiller ? 'filler' : uiStateActiveInactive;
+    const style = this.themeSelected.getStyle('button', uiState, 'base');
+    return this.themeService.prefixStyle(style);
+  }
+
   public getStyle(element: string): CloukitStatefulAndModifierAwareElementThemeStyleDefinition {
     const style = this.themeSelected.getStyle(element, this.state.uiState, this.state.uiModifier);
     return this.themeService.prefixStyle(style);
@@ -120,6 +130,7 @@ export class CloukitPaginationComponent implements OnChanges {
     if (this.theme !== undefined && this.theme !== null && this.themeServiceFromExternal) {
       this.themeSelected = this.themeService.getComponentTheme(this.theme);
     }
+    this.state.pages = calculatePaginationItems(this.total, this.current);
   }
 
   selectPage(page: number) {
