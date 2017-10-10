@@ -93,9 +93,7 @@ export class CloukitPaginationComponent implements OnChanges {
   private themeServiceFromExternal: boolean = false;
   private themeSelected: CloukitComponentTheme;
   private state = {
-    pages: [],
-    uiModifier: 'base',
-    uiState: 'normal',
+    pages: []
   };
 
   constructor(@Optional() themeService: CloukitThemeService) {
@@ -118,7 +116,7 @@ export class CloukitPaginationComponent implements OnChanges {
   }
 
   public getStyle(element: string): CloukitStatefulAndModifierAwareElementThemeStyleDefinition {
-    const style = this.themeSelected.getStyle(element, this.state.uiState, this.state.uiModifier);
+    const style = this.themeSelected.getStyle(element, 'inactive', 'base');
     return this.themeService.prefixStyle(style);
   }
 
