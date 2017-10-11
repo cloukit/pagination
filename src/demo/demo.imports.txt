@@ -1,0 +1,2 @@
+/** WILL BE INJECTED INTO ./dist-demo/src/app/app.module.ts **/
+import { CloukitPaginationModule } from '../components/pagination.module';
