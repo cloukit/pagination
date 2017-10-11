@@ -6,11 +6,11 @@ import { Component } from '@angular/core';
   styles: [ ],
 })
 export class DemoComponent {
-  totalPages = 20;
+  totalPages = 50;
   currentPage = 1;
 
   selectPage(page: number) {
-    console.log(page);
+    console.log(`selected page is ${page}`);
     this.currentPage = page;
   }
 }
