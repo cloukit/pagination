@@ -1,0 +1,765 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@cloukit/pagination v1.2.0</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/images/favicon.ico">
+	    <link rel="stylesheet" href="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@cloukit/pagination v1.2.0</a>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../index.html">@cloukit/pagination v1.2.0</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../modules.html" >
+                            <div class="menu-toggler linked" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            >
+                                <span class="fa fa-archive"></span>
+                                <span class="link-name">Modules</span>
+                                <span class="fa fa-angle-up"></span>
+                            </div>
+                        </a>
+                        <ul class="links collapse in"
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/CloukitPaginationModule.html" >CloukitPaginationModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-components-links"
+                            >
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="fa fa-angle-up"></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/CloukitPaginationComponent.html"  data-type="entity-link" class="active" >CloukitPaginationComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/DemoComponent.html" >DemoComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-classes-links"
+                            >
+                            <span class="fa fa-file-code-o"></span>
+                            <span>Classes</span>
+                            <span class="fa fa-angle-up"></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-classes-links"
+                            >
+                                <li class="link">
+                                    <a href="../classes/CloukitPaginationComponentThemeDefault.html" >CloukitPaginationComponentThemeDefault</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/PaginationItem.html" >PaginationItem</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
+            
+            
+                    <li class="divider"></li>
+                    <li class="copyright">
+                            Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
+                                        <img src="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/images/compodoc-logo.svg" class="img-responsive">
+                            </a>
+                    </li>
+            
+                </ul>
+            
+            </nav>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../index.html">@cloukit/pagination v1.2.0</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../modules.html" >
+                                   <div class="menu-toggler linked" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   >
+                                       <span class="fa fa-archive"></span>
+                                       <span class="link-name">Modules</span>
+                                       <span class="fa fa-angle-up"></span>
+                                   </div>
+                               </a>
+                               <ul class="links collapse in"
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/CloukitPaginationModule.html" >CloukitPaginationModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#components-links"
+                   >
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="fa fa-angle-up"></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/CloukitPaginationComponent.html"  data-type="entity-link" class="active" >CloukitPaginationComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/DemoComponent.html" >DemoComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#classes-links"
+                   >
+                                   <span class="fa fa-file-code-o"></span>
+                                   <span>Classes</span>
+                                   <span class="fa fa-angle-up"></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="classes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../classes/CloukitPaginationComponentThemeDefault.html" >CloukitPaginationComponentThemeDefault</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/PaginationItem.html" >PaginationItem</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
+                   
+                   
+                           <li class="divider"></li>
+                           <li class="copyright">
+                                   Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
+                                               <img src="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/images/compodoc-logo.svg" class="img-responsive">
+                                   </a>
+                           </li>
+                   
+                       </ul>
+                   
+                   </nav>
+               </div>
+               <div class="content component">
+                   <div class="content-data">
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>CloukitPaginationComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab" data-link="infos">Infos</a>
+    </li>
+
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+
+    <li>
+        <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="infos"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/components/pagination.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Pagination Component.</p>
+<p>Just use this inside your templates:</p>
+<pre class="line-numbers"><code class="language-html">&lt;cloukit-pagination ...&gt;&lt;/cloukit-pagination &gt;</code></pre>
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnChanges-interface.html" target="_blank" >OnChanges</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>cloukit-pagination</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">template</td>
+                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;div [ngStyle]&#x3D;&quot;getStyle(&#x27;wrapper&#x27;).style&quot;&gt;
+  &lt;button
+    type&#x3D;&quot;button&quot;
+    [disabled]&#x3D;&quot;!isPreviousPossible()&quot;
+    (click)&#x3D;&quot;selectPrevious()&quot;
+  &gt;
+    {{textPrevLabel()}}
+  &lt;/button&gt;
+  &lt;button
+    *ngFor&#x3D;&quot;let page of state.pages&quot;
+    type&#x3D;&quot;button&quot;
+    [ngStyle]&#x3D;&quot;getButtonStyle(page).style&quot;
+    (click)&#x3D;&quot;selectPage(page.page)&quot;
+  &gt;
+    {{page.label}}
+  &lt;/button&gt;
+  &lt;button
+    type&#x3D;&quot;button&quot;
+    [disabled]&#x3D;&quot;!isNextPossible()&quot;
+    (click)&#x3D;&quot;selectNext()&quot;
+  &gt;
+    {{textNextLabel()}}
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre></td>
+            </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+        <h3 id="inputs">Inputs</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>current</code>
+                        </td>
+                        <td class="col-md-10">
+                            <div><p>Current Page</p>
+</div>
+                              <p>
+                                <em>Type:</em>    <code>number</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/components/pagination.component.ts:71</a></div>
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>labelNext</code>
+                        </td>
+                        <td class="col-md-10">
+                            <div><p>Optional Label for the &quot;Next&quot; button, defaults to &quot;Next&quot;</p>
+</div>
+                              <p>
+                                <em>Type:</em>    <code>string</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/components/pagination.component.ts:77</a></div>
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>labelPrev</code>
+                        </td>
+                        <td class="col-md-10">
+                            <div><p>Optional Label for the &quot;Previous&quot; button, defaults to &quot;Prev&quot;</p>
+</div>
+                              <p>
+                                <em>Type:</em>    <code>string</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/components/pagination.component.ts:83</a></div>
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>theme</code>
+                        </td>
+                        <td class="col-md-10">
+                            <div><p>Optional theme selector. Only use <code>theme</code> when you have registered a valid theme
+via the <code>CloukitThemeService</code> from <a href="https://cloukit.github.io/#/component/theme"><code>@cloukit/theme</code></a>.</p>
+</div>
+                              <p>
+                                <em>Type:</em>    <code>string</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/components/pagination.component.ts:59</a></div>
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>total</code>
+                        </td>
+                        <td class="col-md-10">
+                            <div><p>Number of total Pages</p>
+</div>
+                              <p>
+                                <em>Type:</em>    <code>number</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/components/pagination.component.ts:65</a></div>
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        <h3 id="outputs">Outputs</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>onPageSelect</code>
+                        </td>
+                        <td class="col-md-10">
+                            <div><p>Event emitted, when page is clicked.</p>
+</div>
+                            <em><code>$event</code> type:</em>    <code>any</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/components/pagination.component.ts:90</a></div>
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        <h3 id="constructor">Constructor</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>constructor(themeService: any)</code>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">src/components/pagination.component.ts:97</a></div>
+                                </td>
+                            </tr>
+    
+                </tbody>
+            </table>
+    </section>
+
+
+</div>
+
+
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre class="line-numbers"><code class="language-typescript">import { EventEmitter, Component, Input, OnChanges, Optional, Output } from &#x27;@angular/core&#x27;;
+import { CloukitPaginationComponentThemeDefault } from &#x27;./pagination.theme&#x27;;
+import {
+  CloukitComponentTheme, CloukitStatefulAndModifierAwareElementThemeStyleDefinition,
+  CloukitThemeService,
+} from &#x27;@cloukit/theme&#x27;;
+import { calculatePaginationItems, PaginationItem } from &#x27;../logic/pagination-helper&#x27;;
+
+/**
+ * Pagination Component.
+ *
+ * Just use this inside your templates:
+ *
+ * &#x60;&#x60;&#x60;html
+ * &lt;cloukit-pagination ...&gt;&lt;/cloukit-pagination &gt;
+ * &#x60;&#x60;&#x60;
+ */
+@Component({
+  selector: &#x27;cloukit-pagination&#x27;,
+  template: &#x60;
+  &lt;div [ngStyle]&#x3D;&quot;getStyle(&#x27;wrapper&#x27;).style&quot;&gt;
+    &lt;button
+      type&#x3D;&quot;button&quot;
+      [disabled]&#x3D;&quot;!isPreviousPossible()&quot;
+      (click)&#x3D;&quot;selectPrevious()&quot;
+    &gt;
+      {{textPrevLabel()}}
+    &lt;/button&gt;
+    &lt;button
+      *ngFor&#x3D;&quot;let page of state.pages&quot;
+      type&#x3D;&quot;button&quot;
+      [ngStyle]&#x3D;&quot;getButtonStyle(page).style&quot;
+      (click)&#x3D;&quot;selectPage(page.page)&quot;
+    &gt;
+      {{page.label}}
+    &lt;/button&gt;
+    &lt;button
+      type&#x3D;&quot;button&quot;
+      [disabled]&#x3D;&quot;!isNextPossible()&quot;
+      (click)&#x3D;&quot;selectNext()&quot;
+    &gt;
+      {{textNextLabel()}}
+    &lt;/button&gt;
+  &lt;/div&gt;&#x60;,
+  styles: [ ],
+})
+export class CloukitPaginationComponent implements OnChanges {
+
+  /**
+   * Optional theme selector. Only use &#x60;theme&#x60; when you have registered a valid theme
+   * via the &#x60;CloukitThemeService&#x60; from [&#x60;@cloukit/theme&#x60;]{@link https://cloukit.github.io/#/component/theme}.
+   */
+  @Input()
+  public theme: string;
+
+  /**
+   * Number of total Pages
+   */
+  @Input()
+  public total: number;
+
+  /**
+   * Current Page
+   */
+  @Input()
+  public current: number;
+
+  /**
+   * Optional Label for the &quot;Next&quot; button, defaults to &quot;Next&quot;
+   */
+  @Input()
+  public labelNext: string;
+
+  /**
+   * Optional Label for the &quot;Previous&quot; button, defaults to &quot;Prev&quot;
+   */
+  @Input()
+  public labelPrev: string;
+
+  /**
+   * Event emitted, when page is clicked.
+   * @type {EventEmitter&lt;any&gt;}
+   */
+  @Output()
+  public onPageSelect: EventEmitter&lt;number&gt; &#x3D; new EventEmitter();
+
+  private themeService: CloukitThemeService;
+  private themeServiceFromExternal: boolean &#x3D; false;
+  private themeSelected: CloukitComponentTheme;
+  private state &#x3D; {
+    pages: []
+  };
+
+  constructor(@Optional() themeService: CloukitThemeService) {
+    if (themeService &#x3D;&#x3D;&#x3D; null) {
+      this.themeService &#x3D; new CloukitThemeService();
+      this.themeService.registerComponentTheme(&#x27;pagination&#x27;, new CloukitPaginationComponentThemeDefault());
+      this.themeServiceFromExternal &#x3D; false;
+    } else {
+      this.themeService &#x3D; themeService;
+      this.themeServiceFromExternal &#x3D; true;
+    }
+    this.themeSelected &#x3D; this.themeService.getComponentTheme(&#x27;pagination&#x27;);
+  }
+
+  public getButtonStyle(pageItem: PaginationItem) {
+    const uiStateActiveInactive &#x3D; pageItem.isActive ? &#x27;active&#x27; : &#x27;inactive&#x27;;
+    const uiState &#x3D; pageItem.isFiller ? &#x27;filler&#x27; : uiStateActiveInactive;
+    const style &#x3D; this.themeSelected.getStyle(&#x27;button&#x27;, uiState, &#x27;base&#x27;);
+    return this.themeService.prefixStyle(style);
+  }
+
+  public getStyle(element: string): CloukitStatefulAndModifierAwareElementThemeStyleDefinition {
+    const style &#x3D; this.themeSelected.getStyle(element, &#x27;normal&#x27;, &#x27;base&#x27;);
+    return this.themeService.prefixStyle(style);
+  }
+
+  /**
+   * @overrides OnChanges
+   * @hidden
+   */
+  ngOnChanges() {
+    if (this.theme !&#x3D;&#x3D; undefined &amp;&amp; this.theme !&#x3D;&#x3D; null &amp;&amp; this.themeServiceFromExternal) {
+      this.themeSelected &#x3D; this.themeService.getComponentTheme(this.theme);
+    }
+    this.state.pages &#x3D; calculatePaginationItems(this.total, this.current);
+  }
+
+  selectPage(page: number) {
+    if (page !&#x3D;&#x3D; -1) {
+      this.onPageSelect.emit(page);
+    }
+  }
+
+  textPrevLabel() {
+    if (this.labelPrev !&#x3D;&#x3D; undefined &amp;&amp; this.labelPrev !&#x3D;&#x3D; null) {
+      return this.labelPrev;
+    }
+    return &#x27;Prev&#x27;;
+  }
+
+  textNextLabel() {
+    if (this.labelNext !&#x3D;&#x3D; undefined &amp;&amp; this.labelNext !&#x3D;&#x3D; null) {
+      return this.labelNext;
+    }
+    return &#x27;Next&#x27;;
+  }
+
+  isPreviousPossible() {
+    return this.current &gt; 1;
+  }
+
+  selectPrevious() {
+    if (this.isPreviousPossible()) {
+      this.selectPage(this.current - 1)
+    }
+  }
+
+  isNextPossible() {
+    return this.current &lt; this.total;
+  }
+
+  selectNext() {
+    if (this.isNextPossible()) {
+      this.selectPage(this.current + 1)
+    }
+  }
+}
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade" id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/dist/js/libs/vis.min.js"></script>
+<script src="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/dist/js/libs/htmlparser.js"></script>
+<script src="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/dist/js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div [ngStyle]="getStyle(\'wrapper\').style">  <button    type="button"    [disabled]="!isPreviousPossible()"    (click)="selectPrevious()"  >    {{textPrevLabel()}}  </button>  <button    *ngFor="let page of state.pages"    type="button"    [ngStyle]="getButtonStyle(page).style"    (click)="selectPage(page.page)"  >    {{page.label}}  </button>  <button    type="button"    [disabled]="!isNextPossible()"    (click)="selectNext()"  >    {{textNextLabel()}}  </button></div></div>'
+    var COMPONENTS = [{'name': 'CloukitPaginationComponent', 'selector': 'cloukit-pagination'},{'name': 'DemoComponent', 'selector': 'demo'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CloukitPaginationComponent'};
+</script>
+<script src="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/dist/js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+           </div>
+       </div>
+
+       <script src="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/dist/js/libs/bootstrap-native.js"></script>
+
+       <script src="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/dist/js/libs/es6-shim.min.js"></script>
+       <script src="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/dist/js/libs/EventDispatcher.js"></script>
+       <script src="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/dist/js/libs/promise.min.js"></script>
+       <script src="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/dist/js/libs/zepto.min.js"></script>
+
+       <script src="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/dist/js/compodoc.js"></script>
+
+       <script>var COMPODOC_CURRENT_PAGE_DEPTH = 1;</script>
+
+       <script src="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/dist/js/search/search.js"></script>
+       <script src="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/dist/js/search/lunr.min.js"></script>
+       <script src="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/dist/js/search/search-lunr.js"></script>
+
+       <script src="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/dist/js/tabs.js"></script>
+       <script src="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/dist/js/menu.js"></script>
+       <script src="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/dist/js/libs/prism.js"></script>
+       <script src="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/dist/js/sourceCode.js"></script>
+       <script src="https://cloukit.github.io/compodoc-theme/theme/1.0.0-beta.10/dist/js/search/search_index.js"></script>
+
+    </body>
+</html>
