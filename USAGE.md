@@ -14,7 +14,7 @@ The `app.module.ts` would look like this.
 
 ```typescript
 // (1) Import the Module
-import { CommomPaginationModule } from '@cloukit/pagination';
+import { CloukitPaginationModule } from '@cloukit/pagination';
 
 @NgModule({
   imports: [
@@ -22,7 +22,7 @@ import { CommomPaginationModule } from '@cloukit/pagination';
     FormsModule,
     ReactiveFormsModule,
     // (2) Register it under 'imports'
-    CommomPaginationModule
+    CloukitPaginationModule
   ],
   declarations: [ /* ... */ ],
   providers: [ /* ... */ ],
