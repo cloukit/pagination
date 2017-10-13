@@ -4,18 +4,43 @@
  * https://github.com/cloukit/legal
  */
 import {
-  CloukitComponentTheme, CloukitStatefulAndModifierAwareElementThemeStyleDefinition
+  CloukitComponentTheme, CloukitStatefulAndModifierAwareElementThemeStyleDefinition, UiElement,
 } from '@cloukit/theme';
+import { isNullOrUndefined } from 'util';
+import { PaginationItem } from './pagination.model';
 
-/**
- * The default theme
- */
+export class Ui {
+  public static elements : any = {
+    filler: 'filler',
+    button: 'button',
+  };
+  public static states: any = {
+    normal: 'normal',
+    active: 'active',
+    disabled: 'disabled',
+  };
+  public static modifier: any = {
+    base: 'base',
+    hover: 'hover',
+  };
+
+  public static transform(pageItem: PaginationItem): UiElement {
+    if (isNullOrUndefined(pageItem)) {
+      return new UiElement(Ui.elements.filler, Ui.states.disabled, Ui.modifier.base);
+    }
+    const uiElement = pageItem.isFiller ? Ui.elements.filler : Ui.elements.button;
+    const uiState = pageItem.isActive ? Ui.states.active : Ui.states.normal;
+    return new UiElement(uiElement, uiState, Ui.modifier.base)
+  }
+}
+
+
 export class CloukitPaginationComponentThemeDefault extends CloukitComponentTheme {
 
   constructor() {
     super();
     //
-    // NORMAL
+    // WRAPPER
     //
     this.createStyle('wrapper', 'normal', 'base', {
       style: {
@@ -24,7 +49,10 @@ export class CloukitPaginationComponentThemeDefault extends CloukitComponentThem
       }
     } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition);
 
-    this.createStyle('button', 'inactive', 'base', {
+    //
+    // BUTTON
+    //
+    this.createStyle(Ui.elements.button, Ui.states.normal, Ui.modifier.base, {
       style: {
         alignSelf: 'center',
         display: 'inline-flex',
@@ -48,15 +76,41 @@ export class CloukitPaginationComponentThemeDefault extends CloukitComponentThem
       }
     } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition);
 
-    this.createStyle('button', 'active', 'base', this.merge(this.getStyle('button', 'inactive', 'base'), {
+    this.createStyle(Ui.elements.button, Ui.states.active, Ui.modifier.base, this.merge(this.getStyle(Ui.elements.button, Ui.states.normal, Ui.modifier.base), {
       style: {
-        backgroundColor: 'red',
+        backgroundColor: '#0052cc',
+        color: '#ffffff',
+        cursor: 'default',
       }
     } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
 
-    this.createStyle('button', 'filler', 'base', this.merge(this.getStyle('button', 'inactive', 'base'), {
+    this.createStyle(Ui.elements.button, Ui.states.normal, Ui.modifier.hover, this.merge(this.getStyle(Ui.elements.button, Ui.states.normal, Ui.modifier.base), {
       style: {
-        backgroundColor: '#ccc',
+        textDecoration: 'underline',
+      }
+    } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+
+    this.createStyle(Ui.elements.button, Ui.states.disabled, Ui.modifier.base, this.merge(this.getStyle(Ui.elements.button, Ui.states.normal, Ui.modifier.base), {
+      style: {
+        color: '#777',
+        cursor: 'not-allowed',
+      }
+    } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+
+    //
+    // FILLER
+    //
+    this.createStyle(Ui.elements.filler, Ui.states.normal, Ui.modifier.base, this.merge(this.getStyle(Ui.elements.button, Ui.states.normal, Ui.modifier.base), {
+      style: {
+        color: '#555',
+        cursor: 'default',
+      }
+    } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+
+    this.createStyle(Ui.elements.filler, Ui.states.disabled, Ui.modifier.base, this.merge(this.getStyle(Ui.elements.filler, Ui.states.normal, Ui.modifier.base), {
+      style: {
+        color: '#efefef',
+        cursor: 'not-allowed',
       }
     } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
   }

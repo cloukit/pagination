@@ -1,15 +1,10 @@
+/*!
+ * @license MIT
+ * Copyright (c) 2017 Bernhard Grünewaldt - codeclou.io
+ * https://github.com/cloukit/legal
+ */
 import { isNullOrUndefined } from 'util';
-
-//
-// MODELS
-//
-export class PaginationItem {
-  constructor(
-    public page: number,
-    public isActive: boolean,
-    public isFiller: boolean,
-    public label: string) {}
-}
+import { PaginationItem } from '../components/pagination.model';
 
 //
 // HELPER FUNCTIONS

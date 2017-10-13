@@ -3,13 +3,10 @@
  * Copyright (c) 2017 Bernhard Grünewaldt - codeclou.io
  * https://github.com/cloukit/legal
  */
-import { EventEmitter, Component, Input, OnChanges, Optional, Output } from '@angular/core';
-import { CloukitPaginationComponentThemeDefault } from './pagination.theme';
-import {
-  CloukitComponentTheme, CloukitStatefulAndModifierAwareElementThemeStyleDefinition,
-  CloukitThemeService,
-} from '@cloukit/theme';
-import { calculatePaginationItems, PaginationItem } from '../logic/pagination-helper';
+import { EventEmitter, Component, Input, OnChanges, Output } from '@angular/core';
+import { CloukitComponentTheme, CloukitStatefulAndModifierAwareElementThemeStyleDefinition, CloukitThemeService } from '@cloukit/theme';
+import { calculatePaginationItems } from '../logic/pagination-helper';
+import { PaginationButtonClickEvent, PaginationButtonType, PaginationItem } from './pagination.model';
 
 /**
  * Pagination Component.
@@ -17,35 +14,35 @@ import { calculatePaginationItems, PaginationItem } from '../logic/pagination-he
  * Just use this inside your templates:
  *
  * ```html
- * <cloukit-pagination ...></cloukit-pagination >
+ * <cloukit-pagination ...></cloukit-pagination>
  * ```
  */
 @Component({
   selector: 'cloukit-pagination',
   template: `
   <div [ngStyle]="getStyle('wrapper').style">
-    <button
-      type="button"
-      [disabled]="!isPreviousPossible()"
-      (click)="selectPrevious()"
-    >
-      {{textPrevLabel()}}
-    </button>
-    <button
+    <cloukit-pagination-button
+      [disabled]="!isPreviousPossible() || disabled"
+      [paginationItem]="previousDummyPaginationItem()"
+      [themeSelected]="themeSelected"
+      [type]="PaginationButtonType['previous']"
+      (onClick)="selectPage($event)"      
+    ></cloukit-pagination-button>
+    <cloukit-pagination-button
       *ngFor="let page of state.pages"
-      type="button"
-      [ngStyle]="getButtonStyle(page).style"
-      (click)="selectPage(page.page)"
-    >
-      {{page.label}}
-    </button>
-    <button
-      type="button"
-      [disabled]="!isNextPossible()"
-      (click)="selectNext()"
-    >
-      {{textNextLabel()}}
-    </button>
+      [disabled]="disabled"
+      [paginationItem]="page"
+      [themeSelected]="themeSelected"
+      [type]="PaginationButtonType['normal']"
+      (onClick)="selectPage($event)"
+    ></cloukit-pagination-button>
+    <cloukit-pagination-button
+      [disabled]="!isNextPossible() || disabled"
+      [paginationItem]="nextDummyPaginationItem()"
+      [themeSelected]="themeSelected"
+      [type]="PaginationButtonType['next']"
+      (onClick)="selectPage($event)"
+    ></cloukit-pagination-button>
   </div>`,
   styles: [ ],
 })
@@ -71,6 +68,13 @@ export class CloukitPaginationComponent implements OnChanges {
   public current: number;
 
   /**
+   * External way to disable the whole pagination e.g.
+   * during loading external data
+   */
+  @Input()
+  public disabled: boolean = false;
+
+  /**
    * Optional Label for the "Next" button, defaults to "Next"
    */
   @Input()
@@ -89,30 +93,15 @@ export class CloukitPaginationComponent implements OnChanges {
   @Output()
   public onPageSelect: EventEmitter<number> = new EventEmitter();
 
-  private themeService: CloukitThemeService;
-  private themeServiceFromExternal: boolean = false;
-  private themeSelected: CloukitComponentTheme;
+  // INTERNAL VARIABLES
+  public themeSelected: CloukitComponentTheme;
+  public PaginationButtonType = PaginationButtonType;
   private state = {
     pages: []
   };
 
-  constructor(@Optional() themeService: CloukitThemeService) {
-    if (themeService === null) {
-      this.themeService = new CloukitThemeService();
-      this.themeService.registerComponentTheme('pagination', new CloukitPaginationComponentThemeDefault());
-      this.themeServiceFromExternal = false;
-    } else {
-      this.themeService = themeService;
-      this.themeServiceFromExternal = true;
-    }
+  constructor(private themeService: CloukitThemeService) {
     this.themeSelected = this.themeService.getComponentTheme('pagination');
-  }
-
-  public getButtonStyle(pageItem: PaginationItem) {
-    const uiStateActiveInactive = pageItem.isActive ? 'active' : 'inactive';
-    const uiState = pageItem.isFiller ? 'filler' : uiStateActiveInactive;
-    const style = this.themeSelected.getStyle('button', uiState, 'base');
-    return this.themeService.prefixStyle(style);
   }
 
   public getStyle(element: string): CloukitStatefulAndModifierAwareElementThemeStyleDefinition {
@@ -125,49 +114,51 @@ export class CloukitPaginationComponent implements OnChanges {
    * @hidden
    */
   ngOnChanges() {
-    if (this.theme !== undefined && this.theme !== null && this.themeServiceFromExternal) {
+    if (this.theme !== undefined && this.theme !== null) {
       this.themeSelected = this.themeService.getComponentTheme(this.theme);
+      if (this.themeSelected === null) {
+        console.log(`WARN: requested theme ${this.theme} does not exist. Falling back to default theme for pagination.`);
+        this.themeSelected = this.themeService.getComponentTheme('pagination');
+      }
     }
     this.state.pages = calculatePaginationItems(this.total, this.current);
   }
 
-  selectPage(page: number) {
-    if (page !== -1) {
-      this.onPageSelect.emit(page);
+  selectPage(event: PaginationButtonClickEvent) {
+    if (event.type === PaginationButtonType['previous'] &&
+      this.isPreviousPossible()) {
+      this.onPageSelect.emit(this.current - 1);
+    } else if (event.type === PaginationButtonType['next'] &&
+      this.isNextPossible()) {
+      this.onPageSelect.emit(this.current + 1);
+    } else if (event.type === PaginationButtonType['normal']) {
+      this.onPageSelect.emit(event.page);
     }
   }
 
-  textPrevLabel() {
+  previousDummyPaginationItem() {
+    let label = 'Prev';
     if (this.labelPrev !== undefined && this.labelPrev !== null) {
-      return this.labelPrev;
+      label = this.labelPrev;
     }
-    return 'Prev';
+    return new PaginationItem(-1, false, false, label);
   }
 
-  textNextLabel() {
+  nextDummyPaginationItem() {
+    let label = 'Next';
     if (this.labelNext !== undefined && this.labelNext !== null) {
-      return this.labelNext;
+      label = this.labelNext;
     }
-    return 'Next';
+    return new PaginationItem(-1, false, false, label);
   }
 
   isPreviousPossible() {
     return this.current > 1;
   }
 
-  selectPrevious() {
-    if (this.isPreviousPossible()) {
-      this.selectPage(this.current - 1)
-    }
-  }
-
   isNextPossible() {
     return this.current < this.total;
   }
 
-  selectNext() {
-    if (this.isNextPossible()) {
-      this.selectPage(this.current + 1)
-    }
-  }
 }
+
