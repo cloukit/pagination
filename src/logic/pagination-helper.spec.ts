@@ -4,7 +4,8 @@
  * https://github.com/cloukit/legal
  */
 import { expect } from 'chai';
-import { calculatePaginationItems, createFiller, PaginationItem } from './pagination-helper';
+import { calculatePaginationItems, createFiller } from './pagination-helper';
+import { PaginationItem } from '../components/pagination.model';
 
 describe('pagination-helper', () => {
 
