@@ -8,6 +8,8 @@
   >
   </cloukit-pagination>
 
+  <br><br>
+
   <h3>Pagination disabled externally</h3>
 
   <cloukit-pagination
@@ -15,6 +17,17 @@
     [total]="totalPages"
     [current]="currentPage"
     (onPageSelect)="selectPage($event)"
+  >
+  </cloukit-pagination>
+
+  <br><br>
+
+  <h3>Pagination with just three items</h3>
+
+  <cloukit-pagination
+    [total]="totalPagesDemo2"
+    [current]="currentPageDemo2"
+    (onPageSelect)="selectPageDemo2($event)"
   >
   </cloukit-pagination>
 </div>

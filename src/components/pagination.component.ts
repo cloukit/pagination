@@ -4,9 +4,11 @@
  * https://github.com/cloukit/legal
  */
 import { EventEmitter, Component, Input, OnChanges, Output } from '@angular/core';
-import { CloukitComponentTheme, CloukitStatefulAndModifierAwareElementThemeStyleDefinition, CloukitThemeService } from '@cloukit/theme';
+import {
+  CloukitComponentTheme, CloukitStatefulAndModifierAwareElementThemeStyleDefinition, CloukitThemeService,
+} from '@cloukit/theme';
 import { calculatePaginationItems } from '../logic/pagination-helper';
-import { PaginationButtonClickEvent, PaginationButtonType, PaginationItem } from './pagination.model';
+import { PaginationButtonClickEvent, PaginationButtonType, PaginationItem, Ui } from './pagination.model';
 
 /**
  * Pagination Component.

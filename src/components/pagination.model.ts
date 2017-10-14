@@ -21,3 +21,20 @@ export class PaginationItem {
     public isFiller: boolean,
     public label: string) {}
 }
+
+export class Ui {
+  public static elements : any = {
+    filler: 'filler',
+    button: 'button',
+    wrapper: 'wrapper',
+  };
+  public static states: any = {
+    normal: 'normal',
+    active: 'active',
+    disabled: 'disabled',
+  };
+  public static modifier: any = {
+    base: 'base',
+    hover: 'hover',
+  };
+}

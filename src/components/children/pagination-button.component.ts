@@ -5,8 +5,9 @@
  */
 import { EventEmitter, Component, Input, Output, OnChanges } from '@angular/core';
 import { CloukitComponentTheme, CloukitThemeService, UiElement } from '@cloukit/theme';
-import { Ui } from '../pagination.theme';
+import { Ui } from '../pagination.model';
 import { PaginationButtonClickEvent, PaginationButtonType, PaginationItem } from '../pagination.model';
+import { isNullOrUndefined } from 'util';
 
 @Component({
   selector: 'cloukit-pagination-button',
@@ -63,7 +64,7 @@ export class CloukitPaginationButtonComponent implements OnChanges {
     if (this.ui !== null && this.ui !== undefined) {
       modifier = this.ui.modifier;
     }
-    this.ui = Ui.transform(this.paginationItem);
+    this.ui = CloukitPaginationButtonComponent.transform(this.paginationItem);
     if (modifier !== null && this.isMouseStillOver) {
       this.ui.modifier = modifier;
     }
@@ -90,6 +91,15 @@ export class CloukitPaginationButtonComponent implements OnChanges {
     if (!this.paginationItem.isFiller) {
       this.onClick.emit(new PaginationButtonClickEvent(this.type, this.paginationItem.page));
     }
+  }
+
+  public static transform(pageItem: PaginationItem): UiElement {
+    if (isNullOrUndefined(pageItem)) {
+      return new UiElement(Ui.elements.filler, Ui.states.disabled, Ui.modifier.base);
+    }
+    const uiElement = pageItem.isFiller ? Ui.elements.filler : Ui.elements.button;
+    const uiState = pageItem.isActive ? Ui.states.active : Ui.states.normal;
+    return new UiElement(uiElement, uiState, Ui.modifier.base)
   }
 
 }

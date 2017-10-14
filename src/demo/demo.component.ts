@@ -8,9 +8,14 @@ import { Component } from '@angular/core';
 export class DemoComponent {
   totalPages = 50;
   currentPage = 1;
-
   selectPage(page: number) {
     console.log(`selected page is ${page}`);
     this.currentPage = page;
+  }
+
+  totalPagesDemo2 = 3;
+  currentPageDemo2 = 1;
+  selectPageDemo2(page: number) {
+    this.currentPageDemo2 = page;
   }
 }
