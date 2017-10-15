@@ -13,8 +13,8 @@ import { CloukitPaginationComponentThemeDefault } from '@cloukit/pagination';
 export class MyRedPaginationTheme extends CloukitPaginationComponentThemeDefault {
   constructor() {
     super();
-    const wrapperUntoggledBase = this.getElementTheme('wrapper', 'untoggled', 'base');
-    wrapperUntoggledBase.styleDef.style.borderColor = 'red';
+    const wrapperUntoggledBase = this.getElementTheme('button', 'active', 'base');
+    wrapperUntoggledBase.styleDef.style.backgroundColor = 'red';
   }
 }
 ```
