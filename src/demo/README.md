@@ -3,7 +3,7 @@
 Clone the demo and run it with [yarn](https://yarnpkg.com/en/).
 
 ```
-git clone https://github.com/cloukit/stpaginationory.git
+git clone https://github.com/cloukit/pagination.git
 cd pagination
 yarn
 yarn build
