@@ -3,19 +3,12 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'demo',
   templateUrl: './demo.component.html',
-  styles: [ '.demo { font-family: sans-serif; }'],
+  styles: [ ],
 })
 export class DemoComponent {
-  totalPages = 50;
-  currentPage = 1;
-  selectPage(page: number) {
-    console.log(`selected page is ${page}`);
-    this.currentPage = page;
-  }
-
-  totalPagesDemo2 = 3;
-  currentPageDemo2 = 1;
-  selectPageDemo2(page: number) {
-    this.currentPageDemo2 = page;
-  }
+  public static sharedStyles = [
+    '.demo { font-family: sans-serif; }',
+    '.superButton, .superButtonSecondary { border:2px solid #710ECC; outline:0; background-color:#710ECC; color:#fff; border-radius:0px; padding:4px 8px 4px 8px; color:#fff; cursor:pointer; font-size:1rem; }',
+    '.superButton:hover, .superButtonSecondary:hover { border:2px solid #710ECC; background-color:#fff; color:#710ECC;  }',
+  ]
 }

@@ -1,33 +1,21 @@
-<div class="demo">
-  <h3>Pagination</h3>
+<div style="padding:10px;">
 
-  <cloukit-pagination
-    [total]="totalPages"
-    [current]="currentPage"
-    (onPageSelect)="selectPage($event)"
-  >
-  </cloukit-pagination>
+  <cloukit-story title="Many pages" story="story-00-basic">
+    <story-00-basic></story-00-basic>
+  </cloukit-story>
 
   <br><br>
 
-  <h3>Pagination disabled externally</h3>
-
-  <cloukit-pagination
-    [disabled]="true"
-    [total]="totalPages"
-    [current]="currentPage"
-    (onPageSelect)="selectPage($event)"
-  >
-  </cloukit-pagination>
+  <cloukit-story title="Many pages but disabled" story="story-01-disabled">
+    <story-01-disabled></story-01-disabled>
+  </cloukit-story>
 
   <br><br>
 
-  <h3>Pagination with just three items</h3>
+  <cloukit-story title="Only three pages" story="story-02-small">
+    <story-02-small></story-02-small>
+  </cloukit-story>
 
-  <cloukit-pagination
-    [total]="totalPagesDemo2"
-    [current]="currentPageDemo2"
-    (onPageSelect)="selectPageDemo2($event)"
-  >
-  </cloukit-pagination>
+  <br><br>
+
 </div>

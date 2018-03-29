@@ -2,7 +2,7 @@
   "COMMENT": "THIS FILE WILL BE PARSED DURING BUILD. IT IS NOT THE ACTUAL PACKAGE FILE PUSHED TO NPMJS!",
   "name": "@cloukit/pagination",
   "moduleId": "pagination",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "A pagination component that can be used to paginate huge lists of things.",
   "license": "MIT",
   "author": "codelcou.io",
@@ -21,7 +21,8 @@
     "@cloukit/theme": "^1.6.1"
   },
   "devDependencies": {
-    "@cloukit/library-build-chain": "1.6.0"
+    "@cloukit/library-build-chain": "1.17.1",
+    "@cloukit/story": "1.3.0"
   },
   "peerDependencies": {
     "@angular/common": ">=4.0.0",

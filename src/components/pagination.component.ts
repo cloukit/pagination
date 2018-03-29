@@ -28,7 +28,7 @@ import { PaginationButtonClickEvent, PaginationButtonType, PaginationItem, Ui } 
       [paginationItem]="previousDummyPaginationItem()"
       [themeSelected]="themeSelected"
       [type]="PaginationButtonType['previous']"
-      (onClick)="selectPage($event)"      
+      (onClick)="selectPage($event)"
     ></cloukit-pagination-button>
     <cloukit-pagination-button
       *ngFor="let page of state.pages"
@@ -90,7 +90,6 @@ export class CloukitPaginationComponent implements OnChanges {
 
   /**
    * Event emitted, when page is clicked.
-   * @type {EventEmitter<any>}
    */
   @Output()
   public onPageSelect: EventEmitter<number> = new EventEmitter();
@@ -98,7 +97,7 @@ export class CloukitPaginationComponent implements OnChanges {
   // INTERNAL VARIABLES
   public themeSelected: CloukitComponentTheme;
   public PaginationButtonType = PaginationButtonType;
-  private state = {
+  public state = {
     pages: []
   };
 
