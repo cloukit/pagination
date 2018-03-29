@@ -1,3 +1,39 @@
+<!-- !!! will be dynamically included into cloukit.github.io component doc !!! -->
+<!-- !!! DO NOT USE UNECESSARY MARRKUP THAT BREAKS THE CORPORATE DESIGN !!! -->
+
+### Initial Setup
+
+Import the needed modules in your main module
+
+```typescript
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+// (1) Package Imports pagination and theme
+import { CloukitPaginationModule } from '@cloukit/pagination';
+import { CloukitThemeModule } from '@cloukit/theme';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    // (2) Register Imports for pagination and theme
+    CloukitThemeModule,
+    CloukitPaginationModule,
+  ],
+  providers: [ ],
+  bootstrap: [ AppComponent ],
+})
+// ....
+```
+
+&nbsp;
+
+### Use the pagination
+
 Use it like so
 
 ```html
@@ -9,4 +45,6 @@ Use it like so
 </cloukit-pagination>
 ```
 
-Please note that you have to import [`CloukitThemeModule`](https://cloukit.github.io/#/component/theme) and `CloukitPaginationModule`.
+For more complex examples see the source code of the Demo Stories above.
+
+
