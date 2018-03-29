@@ -223,9 +223,9 @@
     "@types/prismjs" "1.6.2"
     prismjs "1.6.0"
 
-"@cloukit/theme@^1.6.1":
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/@cloukit/theme/-/theme-1.6.2.tgz#fa4924c171ed9b68d7a499adbb13905a8565e9dd"
+"@cloukit/theme@>=1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@cloukit/theme/-/theme-1.7.0.tgz#2b337d01560322951931b496a2fafe6d2b2ebf3f"
 
 "@compodoc/ngd-core@^2.0.0-alpha.1", "@compodoc/ngd-core@~2.0.0":
   version "2.0.0"
