@@ -9,9 +9,9 @@ Import the needed modules in your main module
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-// (1) Package Imports pagination and theme
-import { CloukitPaginationModule } from '@cloukit/pagination';
+// (1) Package Imports
 import { CloukitThemeModule } from '@cloukit/theme';
+import { CloukitPaginationModule } from '@cloukit/pagination';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { CloukitThemeModule } from '@cloukit/theme';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    // (2) Register Imports for pagination and theme
+    // (2) Register Imports
     CloukitThemeModule,
     CloukitPaginationModule,
   ],
