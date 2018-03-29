@@ -2,7 +2,7 @@
   "COMMENT": "THIS FILE WILL BE PARSED DURING BUILD. IT IS NOT THE ACTUAL PACKAGE FILE PUSHED TO NPMJS!",
   "name": "@cloukit/pagination",
   "moduleId": "pagination",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "A pagination component that can be used to paginate huge lists of things.",
   "license": "MIT",
   "author": "codelcou.io",
@@ -18,7 +18,7 @@
     "test": "./node_modules/mocha/bin/mocha  --timeout 8000 --exit -r ts-node/register ./src/logic/*.spec.ts"
   },
   "dependencies": {
-    "@cloukit/theme": "^1.6.1"
+    "@cloukit/theme": ">=1.6.1"
   },
   "devDependencies": {
     "@cloukit/library-build-chain": "1.17.1",
