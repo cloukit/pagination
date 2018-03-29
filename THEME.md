@@ -3,7 +3,7 @@ This graphic shows you all elements with their states and modifiers.
 
 cloukitSvg:https://cloukit.github.io/pagination/themeing/cloukit-pagination-decomposed.svg
 
-Below you can see the two themes provided by pagination. You can easily extend one of the existing themes and change it to your needs. But do not forget to register it at the [`cloukitThemeService`](https://cloukit.github.io/#/guide/themeing).
+Below you can see the two themes provided by pagination. You can easily extend one of the existing themes and change it to your needs. But do not forget to register it at the [`CloukitThemeService`](https://cloukit.github.io/#/guide/themeing).
 
 A new theme with a red outline would be created like so:
 
