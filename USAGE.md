@@ -3,7 +3,13 @@
 
 ### Initial Setup
 
-Import the needed modules in your main module
+First install needed peerDependencies.
+
+```
+yarn add @cloukit/theme
+```
+
+Then import the needed modules in your main module
 
 ```typescript
 import { NgModule } from '@angular/core';
@@ -58,7 +64,8 @@ Please mind the the compatibility chart
 
 | Angular Version | Cloukit Component Version |
 |-----------------|---------------------------|
-| >=5.0.0         | 1.6.1 - current           |
+| >=6.0.0         | 6.0.0 - current           |
+| >=5.0.0         | 1.6.1 - 1.7.0             |
 | >=4.0.0         | 1.2.0 - 1.6.0             |
 
 To install a specific version use:
