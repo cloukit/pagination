@@ -3,10 +3,7 @@
  * Copyright (c) 2017 Bernhard Grünewaldt - codeclou.io
  * https://github.com/cloukit/legal
  */
-import {
-  CloukitComponentTheme,
-  CloukitStatefulAndModifierAwareElementThemeStyleDefinition,
-} from '@cloukit/theme';
+import { CloukitComponentTheme } from '@cloukit/theme';
 import { Ui } from './pagination.model';
 
 export class CloukitPaginationComponentThemeDefault extends CloukitComponentTheme {
@@ -20,7 +17,7 @@ export class CloukitPaginationComponentThemeDefault extends CloukitComponentThem
       style: {
         display: 'flex',
       },
-    } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition);
+    });
 
     //
     // BUTTON
@@ -47,7 +44,7 @@ export class CloukitPaginationComponentThemeDefault extends CloukitComponentThem
         backgroundColor: 'transparent',
         cursor: 'pointer',
       },
-    } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition);
+    });
 
     this.createStyle(Ui.elements.button, Ui.states.active, Ui.modifier.base,
       this.merge(this.getStyle(Ui.elements.button, Ui.states.normal, Ui.modifier.base), {
@@ -56,14 +53,14 @@ export class CloukitPaginationComponentThemeDefault extends CloukitComponentThem
           color: '#ffffff',
           cursor: 'default',
         },
-      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+      }));
 
     this.createStyle(Ui.elements.button, Ui.states.normal, Ui.modifier.hover,
       this.merge(this.getStyle(Ui.elements.button, Ui.states.normal, Ui.modifier.base), {
         style: {
           textDecoration: 'underline',
         },
-      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+      }));
 
     this.createStyle(Ui.elements.button, Ui.states.disabled, Ui.modifier.base,
       this.merge(this.getStyle(Ui.elements.button, Ui.states.normal, Ui.modifier.base), {
@@ -71,7 +68,7 @@ export class CloukitPaginationComponentThemeDefault extends CloukitComponentThem
           color: '#777',
           cursor: 'not-allowed',
         },
-      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+      }));
 
     //
     // FILLER
@@ -82,7 +79,7 @@ export class CloukitPaginationComponentThemeDefault extends CloukitComponentThem
           color: '#555',
           cursor: 'default',
         },
-      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+      }));
 
     this.createStyle(Ui.elements.filler, Ui.states.disabled, Ui.modifier.base,
       this.merge(this.getStyle(Ui.elements.filler, Ui.states.normal, Ui.modifier.base), {
@@ -90,7 +87,7 @@ export class CloukitPaginationComponentThemeDefault extends CloukitComponentThem
           color: '#efefef',
           cursor: 'not-allowed',
         },
-      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+      }));
   }
 
 }

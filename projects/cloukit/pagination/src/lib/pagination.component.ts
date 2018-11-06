@@ -5,10 +5,11 @@
  */
 import { EventEmitter, Component, Input, OnChanges, Output } from '@angular/core';
 import {
-  CloukitComponentTheme, CloukitStatefulAndModifierAwareElementThemeStyleDefinition, CloukitThemeService,
+  CloukitComponentTheme, CloukitStatefulAndModifierAwareElementThemeStyleDefinition,
+  CloukitThemeService,
 } from '@cloukit/theme';
 import { calculatePaginationItems } from './logic/pagination-helper';
-import { PaginationButtonClickEvent, PaginationButtonType, PaginationItem, Ui } from './pagination.model';
+import { PaginationButtonClickEvent, PaginationButtonType, PaginationItem } from './pagination.model';
 
 /**
  * Pagination Component.

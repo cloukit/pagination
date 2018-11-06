@@ -23,7 +23,7 @@ export class PaginationItem {
 }
 
 export class Ui {
-  public static elements : any = {
+  public static elements: any = {
     filler: 'filler',
     button: 'button',
     wrapper: 'wrapper',
