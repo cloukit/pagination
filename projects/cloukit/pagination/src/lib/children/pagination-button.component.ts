@@ -14,7 +14,7 @@ import { PaginationButtonClickEvent, PaginationButtonType, PaginationItem } from
     <button
       type="button"
       [disabled]="disabled"
-      [ngStyle]="style.style"
+      [ngStyle]="style?.style"
       (click)="doClick()"
       (mouseenter)="mouseEnter()"
       (mouseleave)="mouseLeave()"
