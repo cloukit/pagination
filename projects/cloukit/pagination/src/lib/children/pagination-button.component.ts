@@ -14,7 +14,7 @@ import { PaginationButtonClickEvent, PaginationButtonType, PaginationItem } from
     <button
       type="button"
       [disabled]="disabled"
-      [ngStyle]="style"
+      [ngStyle]="style.style"
       (click)="doClick()"
       (mouseenter)="mouseEnter()"
       (mouseleave)="mouseLeave()"
@@ -62,7 +62,7 @@ export class CloukitPaginationButtonComponent implements OnChanges {
   updateStyle() {
     const style = this.themeSelected.getUiStyle(this.ui);
     if (style !== null) {
-      this.style = this.themeService.prefixStyle(style.style);
+      this.style = this.themeService.prefixStyle(style);
     }
   }
 
